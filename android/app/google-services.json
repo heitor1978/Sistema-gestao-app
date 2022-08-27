@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "760229073152",
+    "project_id": "sistemagestaofrotas",
+    "storage_bucket": "sistemagestaofrotas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760229073152:android:cdea37a723fe1265b123e5",
+        "android_client_info": {
+          "package_name": "com.example.sistemagestao_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "760229073152-uc3kvd7pnb8q32mp071htlqgi0jtf5ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3r2dExUR9pEUM3DtWL9lkhlKoQrp7NfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "760229073152-uc3kvd7pnb8q32mp071htlqgi0jtf5ip.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "760229073152-knl2fjcn2g05b1iosile1jnqtesjm5dt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sistemagestaoApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760229073152:android:e3c690d9c0525136b123e5",
+        "android_client_info": {
+          "package_name": "com.sistemagestao.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "760229073152-uc3kvd7pnb8q32mp071htlqgi0jtf5ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3r2dExUR9pEUM3DtWL9lkhlKoQrp7NfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "760229073152-uc3kvd7pnb8q32mp071htlqgi0jtf5ip.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "760229073152-knl2fjcn2g05b1iosile1jnqtesjm5dt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sistemagestaoApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
