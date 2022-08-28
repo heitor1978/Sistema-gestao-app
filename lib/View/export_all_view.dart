@@ -1,0 +1,1 @@
+export 'package:sistemagestao_app/View/Home/home.dart';
