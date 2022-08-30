@@ -114,7 +114,7 @@ class AuthService extends ChangeNotifier {
   }
 
   setCustomerModel() async {
-    await firestore.collection("usuarios").doc(getUid()).get().then((event) {
+    await firestore.collection("funcionarios").doc(getUid()).get().then((event) {
       model.nome = event['nome'];
       model.cpf = event['cpf'];
       model.telefone = event['telefone'];
@@ -154,7 +154,7 @@ class AuthService extends ChangeNotifier {
 
   getInformationUser() {
     return firestore
-        .collection("usuarios")
+        .collection("funcionarios")
         .where("uid", isEqualTo: _auth.currentUser!.uid)
         .snapshots();
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sistemagestao_app/Services/auth_service.dart';
+import 'package:sistemagestao_app/Services/AuthService/auth_service.dart';
 
 import 'package:sistemagestao_app/View/export_all_view.dart';
 
