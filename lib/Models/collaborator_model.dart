@@ -10,7 +10,7 @@ class CollaboratorModel{
     required this.cpf,
     required this.nome,
     required this.telefone,
-    required this.uid
+    required this.uid,
   });
 
 

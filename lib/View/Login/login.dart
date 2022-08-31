@@ -72,7 +72,7 @@ class _LoginState extends State<Login> {
                     height: 250,
                   ),*/
                 ),
-                SizedBox(
+                const SizedBox(
                   height:
                       150, // precisa resolver está questão ////////////////////////////////////////////////
                 ),
