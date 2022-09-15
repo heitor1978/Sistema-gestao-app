@@ -68,7 +68,7 @@ class _LoginState extends State<Login> {
                         bottomRight: Radius.circular(20)),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height:
                       150, // precisa resolver está questão ////////////////////////////////////////////////
                 ),

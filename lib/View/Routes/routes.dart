@@ -3,14 +3,14 @@ import 'package:sistemagestao_app/Services/AuthService/auth_service.dart';
 
 import 'package:sistemagestao_app/View/export_all_view.dart';
 
-class Routes extends StatefulWidget {
-  const Routes({Key? key}) : super(key: key);
+class RouteApp extends StatefulWidget {
+  const RouteApp({Key? key}) : super(key: key);
 
   @override
-  State<Routes> createState() => _RoutesState();
+  State<RouteApp> createState() => _RouteAppState();
 }
 
-class _RoutesState extends State<Routes> {
+class _RouteAppState extends State<RouteApp> {
   AuthService auth = AuthService();
   bool isLoading = true;
   String? route;
