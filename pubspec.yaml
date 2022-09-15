@@ -70,6 +70,7 @@ flutter:
     - assets/images/localization.png
     - assets/images/pdf-file.png
     - assets/images/check-box.png
+    - assets/images/CaminhaoMercedes.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

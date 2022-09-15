@@ -59,7 +59,7 @@ class _LoginState extends State<Login> {
             child: ListView(
               children: [
                 Container(
-                  padding: const EdgeInsets.fromLTRB(0, 210, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 350, 0, 0),
                   decoration: const BoxDecoration(
                     color: primaryColor,
                     borderRadius: BorderRadius.only(
@@ -70,21 +70,42 @@ class _LoginState extends State<Login> {
                 ),
                 const SizedBox(
                   height:
-                      150, // precisa resolver está questão ////////////////////////////////////////////////
+                      20, // precisa resolver está questão ////////////////////////////////////////////////
                 ),
-                CustomTextField(
-                  labelText: "Email",
-                  placeholder: "colaborador@email.com",
-                  inputType: TextInputType.emailAddress,
-                  onSaved: (value) => email = value,
-                  validator: (value) => UserValidator.validarEmail(value!),
-                ),
-                CustomTextField(
-                  labelText: "Senha",
-                  placeholder: "********",
-                  obscureText: true,
-                  onSaved: (value) => senha = value,
-                  validator: (value) => UserValidator.validarSenha(value!),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: colorCard,
+                        borderRadius: BorderRadius.circular(15)),
+                    width: MediaQuery.of(context).size.width,
+                    height: 220,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                          child: CustomTextField(
+                            labelText: "Email",
+                            placeholder: "colaborador@email.com",
+                            inputType: TextInputType.emailAddress,
+                            onSaved: (value) => email = value,
+                            validator: (value) =>
+                                UserValidator.validarEmail(value!),
+                          ),
+                        ),
+                        CustomTextField(
+                          labelText: "Senha",
+                          placeholder: "********",
+                          obscureText: true,
+                          onSaved: (value) => senha = value,
+                          validator: (value) =>
+                              UserValidator.validarSenha(value!),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 (loading)
                     ? const Center(
@@ -150,7 +171,7 @@ class _LoginState extends State<Login> {
                 width: MediaQuery.of(context).size.height / 4,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(150),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black26,
