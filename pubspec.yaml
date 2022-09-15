@@ -39,6 +39,7 @@ dependencies:
   cloud_firestore: ^3.4.6
   firebase_auth: ^3.7.0
   google_fonts: ^3.0.1
+  font_awesome_flutter: ^10.2.1
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,8 @@ flutter:
     - assets/images/chiquinho-logo.png
     - assets/images/caminhao.png
     - assets/images/localization.png
+    - assets/images/pdf-file.png
+    - assets/images/check-box.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
