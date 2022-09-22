@@ -53,74 +53,84 @@ class _CheckScreenState extends State<CheckScreen> {
                         ),
                       ),
                     ),
-                    CheckboxListTile(
-                      activeColor: colorLetters,
-                      title: Text(
-                        "Calibragem Volante",
-                        style: GoogleFonts.poppins(
-                          color: colorLetters,
+                    Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      child: Card(
+                        child: Column(
+                          children: [
+                            CheckboxListTile(
+                              activeColor: colorLetters,
+                              title: Text(
+                                "Calibragem Volante",
+                                style: GoogleFonts.poppins(
+                                  color: colorLetters,
+                                ),
+                              ),
+                              value: false,
+                              onChanged: (value) {},
+                            ),
+                            CheckboxListTile(
+                              activeColor: colorLetters,
+                              title: Text(
+                                "Sistema de Suspensão",
+                                style: GoogleFonts.poppins(
+                                  color: colorLetters,
+                                ),
+                              ),
+                              value: true,
+                              onChanged: (value) {},
+                            ),
+                            CheckboxListTile(
+                              activeColor: colorLetters,
+                              title: Text(
+                                "Oléo Motor",
+                                style: GoogleFonts.poppins(
+                                  color: colorLetters,
+                                ),
+                              ),
+                              value: false,
+                              onChanged: (value) {},
+                            ),
+                            CheckboxListTile(
+                              activeColor: colorLetters,
+                              title: Text(
+                                "Filtro de combustivel",
+                                style: GoogleFonts.poppins(
+                                  color: colorLetters,
+                                ),
+                              ),
+                              value: true,
+                              onChanged: (value) {},
+                            ),
+                            CheckboxListTile(
+                              activeColor: colorLetters,
+                              title: Text(
+                                "Sistema de Sinalização",
+                                style: GoogleFonts.poppins(
+                                  color: colorLetters,
+                                ),
+                              ),
+                              value: true,
+                              onChanged: (value) {},
+                            ),
+                            CheckboxListTile(
+                              activeColor: colorLetters,
+                              title: Text(
+                                "Sistema de Freio",
+                                style: GoogleFonts.poppins(
+                                  color: colorLetters,
+                                ),
+                              ),
+                              value: false,
+                              onChanged: (value) {},
+                            ),
+                          ],
                         ),
                       ),
-                      value: false,
-                      onChanged: (value) {},
-                    ),
-                    CheckboxListTile(
-                      activeColor: colorLetters,
-                      title: Text(
-                        "Sistema de Suspensão",
-                        style: GoogleFonts.poppins(
-                          color: colorLetters,
-                        ),
-                      ),
-                      value: true,
-                      onChanged: (value) {},
-                    ),
-                    CheckboxListTile(
-                      activeColor: colorLetters,
-                      title: Text(
-                        "Oléo Motor",
-                        style: GoogleFonts.poppins(
-                          color: colorLetters,
-                        ),
-                      ),
-                      value: false,
-                      onChanged: (value) {},
-                    ),
-                    CheckboxListTile(
-                      activeColor: colorLetters,
-                      title: Text(
-                        "Filtro de combustivel",
-                        style: GoogleFonts.poppins(
-                          color: colorLetters,
-                        ),
-                      ),
-                      value: true,
-                      onChanged: (value) {},
-                    ),
-                    CheckboxListTile(
-                      activeColor: colorLetters,
-                      title: Text(
-                        "Sistema de Sinalização",
-                        style: GoogleFonts.poppins(
-                          color: colorLetters,
-                        ),
-                      ),
-                      value: true,
-                      onChanged: (value) {},
-                    ),
-                    CheckboxListTile(
-                      activeColor: colorLetters,
-                      title: Text(
-                        "Sistema de Freio",
-                        style: GoogleFonts.poppins(
-                          color: colorLetters,
-                        ),
-                      ),
-                      value: false,
-                      onChanged: (value) {},
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                       child: TextField(
                         cursorColor: colorLetters,
                         autocorrect: true,
@@ -158,7 +168,7 @@ class _CheckScreenState extends State<CheckScreen> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Color.fromARGB(255, 79, 202, 239)),
-                margin: EdgeInsets.fromLTRB(20, 20, 20, 40),
+                margin: EdgeInsets.fromLTRB(15, 20, 15, 40),
                 //color: primaryColor,
               ),
             ]),
