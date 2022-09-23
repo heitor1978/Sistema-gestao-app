@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sistemagestao_app/Theme/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sistemagestao_app/View/CheckScreen/check_screen.dart';
 import 'package:sistemagestao_app/Widgets/export_all_widget.dart';
 
 class Home extends StatefulWidget {
@@ -239,7 +240,11 @@ class _HomeState extends State<Home> {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (_) => CheckScreen()),
+                      (route) => false);
+                },
                 child: Container(
                   decoration: BoxDecoration(
                       color: colorCard,
