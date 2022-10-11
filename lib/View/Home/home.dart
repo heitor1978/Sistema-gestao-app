@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sistemagestao_app/Theme/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sistemagestao_app/View/AlternateRoutes/Alternate_Routes.dart';
 import 'package:sistemagestao_app/View/CheckScreen/check_screen.dart';
+import 'package:sistemagestao_app/View/Documents/documents.dart';
 import 'package:sistemagestao_app/Widgets/export_all_widget.dart';
 
 class Home extends StatefulWidget {
@@ -14,6 +16,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final PageController _pageController = PageController();
+  final TextEditingController _controllerReasonDenied = TextEditingController();
+
   int indexNavigatorBar = 0;
 
   @override
@@ -129,7 +133,11 @@ class _HomeState extends State<Home> {
           Padding(
             padding: const EdgeInsets.all(15),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (_) => AlternateRoutes()),
+                    (route) => false);
+              },
               child: Container(
                 decoration: BoxDecoration(
                     color: colorCard, borderRadius: BorderRadius.circular(15)),
@@ -181,7 +189,11 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (_) => Documents()),
+                      (route) => false);
+                },
                 child: Container(
                   decoration: BoxDecoration(
                       color: colorCard,
@@ -260,7 +272,67 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(15),
             child: InkWell(
               borderRadius: BorderRadius.circular(15),
-              onTap: () {},
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    // ignore: prefer_const_constructors
+                    title: Center(
+                      child: Text(
+                        "Ocorrência",
+                        style: TextStyle(
+                          color: primaryColor,
+                        ),
+                      ),
+                    ),
+                    // ignore: prefer_const_constructors
+                    content: TextField(
+                      controller: _controllerReasonDenied,
+                      //autofocus: true,
+                      cursorRadius: Radius.circular(15),
+                      autocorrect: true, // auto correção de palavras
+                      maxLines: 7,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              width: 2,
+                              color: primaryColor,
+                            ),
+                            borderRadius: BorderRadius.circular(15)),
+                        hintText: "Houve Roubo de carga durante a viagem",
+                        labelText: "Digite a sua ocorrência",
+                        labelStyle: TextStyle(
+                          color: primaryColor,
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            width: 2,
+                            color: primaryColor,
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: primaryColor,
+                            width: 2,
+                          ),
+                        ),
+                      ),
+                      // autofocus: true, utilizado para quando clicar no textField, para que o tecladodo celular apareça
+// Aqui devemos colocar o conteudo, neste caso para está aplicação deveriamos colocar um Large TextField
+                    ),
+
+                    actions: [
+                      // Podemos colocar algumas ações que neste cas esta sendo criado um button qeu ao clicar será enviado ao banco de dados
+                      CustomTextButton(
+                        buttonText: "Enviar",
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                );
+              },
               child: Container(
                 decoration: BoxDecoration(
                     color: colorCard, borderRadius: BorderRadius.circular(15)),
