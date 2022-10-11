@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sistemagestao_app/Theme/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,16 +19,37 @@ class _HomeState extends State<Home> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final PageController _pageController = PageController();
   final TextEditingController _controllerReasonDenied = TextEditingController();
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  String? name;
 
   int indexNavigatorBar = 0;
+  @override
+  getNameAppBar() async {
+    await firestore
+        .collection('funcionarios')
+        .doc(auth.currentUser!.uid)
+        .get()
+        .then((value) {
+      setState(() {
+        name = value['nome'];
+      });
+    });
+  }
+
+  getName() {
+    return name ?? "";
+  }
 
   @override
   Widget build(BuildContext context) {
+    getNameAppBar();
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 224, 227, 231),
       appBar: AppBar(
         backgroundColor: primaryColor,
-        title: Text("Olá, David Guetta"),
+        title: Text("Olá, " + getName()),
       ),
       body: Column(
         children: [
