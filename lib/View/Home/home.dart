@@ -48,8 +48,59 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 224, 227, 231),
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.menu),
+        ),
         backgroundColor: primaryColor,
-        title: Text("Olá, " + getName()),
+        title: Text("Olá, " + getName()), //
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CircleAvatar(
+                backgroundColor: primaryColor,
+                radius: 50,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Alex Gomes"),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("alex.gsan11@gmail.com"),
+                ),
+              ],
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("Home"),
+            ),
+            ListTile(
+              leading: Icon(Icons.lock),
+              title: Text("Politicas de Privacidade"),
+            ),
+            ListTile(
+              leading: Icon(Icons.sd_card_alert_rounded),
+              title: Text("Sobre nós"),
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text("Sair"),
+            )
+          ],
+        ),
       ),
       body: Column(
         children: [
@@ -130,7 +181,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+            margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -141,7 +192,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+            margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
             child: Row(
               children: [
                 Text(
