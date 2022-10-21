@@ -47,60 +47,10 @@ class _HomeState extends State<Home> {
     getNameAppBar();
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 224, 227, 231),
+      drawer: CustomDrawer(),
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.menu),
-        ),
         backgroundColor: primaryColor,
         title: Text("Olá, " + getName()), //
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CircleAvatar(
-                backgroundColor: primaryColor,
-                radius: 50,
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Alex Gomes"),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("alex.gsan11@gmail.com"),
-                ),
-              ],
-            ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text("Home"),
-            ),
-            ListTile(
-              leading: Icon(Icons.lock),
-              title: Text("Politicas de Privacidade"),
-            ),
-            ListTile(
-              leading: Icon(Icons.sd_card_alert_rounded),
-              title: Text("Sobre nós"),
-            ),
-            ListTile(
-              leading: Icon(Icons.exit_to_app),
-              title: Text("Sair"),
-            )
-          ],
-        ),
       ),
       body: Column(
         children: [
@@ -136,44 +86,6 @@ class _HomeState extends State<Home> {
                           ),
                         ],
                       ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(18, 0, 18, 0),
-                            child: Text(
-                              "Alterar",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll<Color>(primaryColor),
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-                            child: Text(
-                              "Remover",
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll<Color>(primaryColor),
-                          ),
-                        ),
-                      ],
                     ),
                   ),
                 ],
