@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sistemagestao_app/View/AlternateRoutes/Alternate_Routes.dart';
 import 'package:sistemagestao_app/View/CheckScreen/check_screen.dart';
 import 'package:sistemagestao_app/View/Documents/documents.dart';
-import 'package:sistemagestao_app/View/Routes/routes.dart';
 import 'package:sistemagestao_app/View/export_all_view.dart';
 
 class App extends StatelessWidget {

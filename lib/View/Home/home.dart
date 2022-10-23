@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sistemagestao_app/View/AlternateRoutes/Alternate_Routes.dart';
 import 'package:sistemagestao_app/View/CheckScreen/check_screen.dart';
 import 'package:sistemagestao_app/View/Documents/documents.dart';
+import 'package:sistemagestao_app/View/Occurrence/occurrence.dart';
 import 'package:sistemagestao_app/Widgets/export_all_widget.dart';
 
 class Home extends StatefulWidget {
@@ -26,9 +27,6 @@ class _HomeState extends State<Home> {
 
   int indexNavigatorBar = 0;
   @override
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +37,11 @@ class _HomeState extends State<Home> {
         title: Text("Olá, Seja Bem-Vindo"), //
       ),
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-        stream: firestore.collection('funcionarios').doc(auth.currentUser!.uid).collection('veiculo').snapshots(),
+        stream: firestore
+            .collection('funcionarios')
+            .doc(auth.currentUser!.uid)
+            .collection('veiculo')
+            .snapshots(),
         builder: (_, snapshot) {
           if (!snapshot.hasData) return const CircularProgressIndicator();
           return ListView.builder(
@@ -75,8 +77,10 @@ class _HomeState extends State<Home> {
                                     ),
                                     Column(
                                       children: [
-                                        Text(snapshot.data!.docs[index]['placa']),
-                                        Text(snapshot.data!.docs[index]['versaoVeiculo'])
+                                        Text(snapshot.data!.docs[index]
+                                            ['placa']),
+                                        Text(snapshot.data!.docs[index]
+                                            ['versaoVeiculo'])
                                       ],
                                     ),
                                     Icon(
@@ -267,66 +271,10 @@ class _HomeState extends State<Home> {
                       child: InkWell(
                         borderRadius: BorderRadius.circular(15),
                         onTap: () {
-                          showDialog(
-                            context: context,
-                            builder: (context) => AlertDialog(
-                              // ignore: prefer_const_constructors
-                              title: Center(
-                                child: Text(
-                                  "Ocorrência",
-                                  style: TextStyle(
-                                    color: primaryColor,
-                                  ),
-                                ),
-                              ),
-                              // ignore: prefer_const_constructors
-                              content: TextField(
-                                controller: _controllerReasonDenied,
-                                //autofocus: true,
-                                cursorRadius: Radius.circular(15),
-                                autocorrect: true, // auto correção de palavras
-                                maxLines: 7,
-                                decoration: InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        width: 2,
-                                        color: primaryColor,
-                                      ),
-                                      borderRadius: BorderRadius.circular(15)),
-                                  hintText:
-                                      "Houve Roubo de carga durante a viagem",
-                                  labelText: "Digite a sua ocorrência",
-                                  labelStyle: TextStyle(
-                                    color: primaryColor,
-                                  ),
-                                  border: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      width: 2,
-                                      color: primaryColor,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    borderSide: BorderSide(
-                                      color: primaryColor,
-                                      width: 2,
-                                    ),
-                                  ),
-                                ),
-                                // autofocus: true, utilizado para quando clicar no textField, para que o tecladodo celular apareça
-// Aqui devemos colocar o conteudo, neste caso para está aplicação deveriamos colocar um Large TextField
-                              ),
-
-                              actions: [
-                                // Podemos colocar algumas ações que neste cas esta sendo criado um button qeu ao clicar será enviado ao banco de dados
-                                CustomTextButton(
-                                  buttonText: "Enviar",
-                                  onPressed: () {},
-                                ),
-                              ],
-                            ),
-                          );
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                Occurrence(),
+                          ));
                         },
                         child: Container(
                           decoration: BoxDecoration(
