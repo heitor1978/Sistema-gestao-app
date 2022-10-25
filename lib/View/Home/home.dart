@@ -57,47 +57,32 @@ class _HomeState extends State<Home> {
       ),
       drawer: Drawer(
         child: ListView(
+          padding: EdgeInsets.all(0),
           children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                DrawerHeader(
+                    child: Image.asset('assets/images/chiquinho-logo.png')),
+              ],
+            ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CircleAvatar(
-                backgroundColor: primaryColor,
-                radius: 50,
+              padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+              child: CustomTextField(
+                labelText: "E-mail",
+                placeholder: "colaborador@email.com",
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Alex Gomes"),
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+              child: CustomTextField(
+                labelText: "Senha",
+                placeholder: "************",
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("alex.gsan11@gmail.com"),
-                ),
-              ],
-            ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text("Home"),
-            ),
-            ListTile(
-              leading: Icon(Icons.lock),
-              title: Text("Politicas de Privacidade"),
-            ),
-            ListTile(
-              leading: Icon(Icons.sd_card_alert_rounded),
-              title: Text("Sobre nós"),
-            ),
-            ListTile(
-              leading: Icon(Icons.exit_to_app),
-              title: Text("Sair"),
+            Container(
+              padding: EdgeInsets.fromLTRB(15, 15, 15, 0),
+              child: CustomTextButton(buttonText: "Entrar", onPressed: () {}),
             )
           ],
         ),
