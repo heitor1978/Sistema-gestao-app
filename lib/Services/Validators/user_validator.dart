@@ -32,4 +32,11 @@ class UserValidator {
     return null;
   }
 
+  static String? validarRegistroOcorrencia(String ocorrencia) {
+    if (ocorrencia.isEmpty) return 'Registro de Ocorrência é obrigatório';
+    if (ocorrencia.length < 4) return 'Registro de Ocorrência inválido';
+
+    return null;
+  }
+
 }
