@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sistemagestao_app/Theme/theme.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class CheckScreen extends StatefulWidget {
   const CheckScreen({super.key});
@@ -12,6 +12,25 @@ class CheckScreen extends StatefulWidget {
 }
 
 class _CheckScreenState extends State<CheckScreen> {
+  final firestore = FirebaseFirestore.instance;
+  final auth = FirebaseAuth.instance;
+  final TextEditingController _controller= TextEditingController();
+
+  bool _ativado = false;
+  bool _ativado1 = false;
+  bool _ativado2 = false;
+  bool _ativado3 = false;
+  bool _ativado4 = false;
+  bool _ativado5 = false;
+
+  void save(BuildContext context) async {
+    firestore.collection('funcionarios').doc(auth.currentUser!.uid).collection('checklist').doc().set({
+      "nome": "Checklist do Dia",
+      "observacaoChecklist": _controller.text,
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,8 +86,12 @@ class _CheckScreenState extends State<CheckScreen> {
                                   color: colorLetters,
                                 ),
                               ),
-                              value: false,
-                              onChanged: (value) {},
+                              value: _ativado,
+                              onChanged: (value) {
+                                setState(() {
+                                  _ativado = value!;
+                                });
+                              },
                             ),
                             CheckboxListTile(
                               activeColor: colorLetters,
@@ -78,8 +101,13 @@ class _CheckScreenState extends State<CheckScreen> {
                                   color: colorLetters,
                                 ),
                               ),
-                              value: true,
-                              onChanged: (value) {},
+                              value: _ativado1,
+                              onChanged: (value){
+                                setState(() {
+                                  _ativado1 = value!;
+                                });
+                              },
+                              
                             ),
                             CheckboxListTile(
                               activeColor: colorLetters,
@@ -89,8 +117,12 @@ class _CheckScreenState extends State<CheckScreen> {
                                   color: colorLetters,
                                 ),
                               ),
-                              value: false,
-                              onChanged: (value) {},
+                              value: _ativado2,
+                              onChanged: (value) {
+                                setState(() {
+                                  _ativado2 = value!;
+                                });
+                              },
                             ),
                             CheckboxListTile(
                               activeColor: colorLetters,
@@ -100,8 +132,12 @@ class _CheckScreenState extends State<CheckScreen> {
                                   color: colorLetters,
                                 ),
                               ),
-                              value: true,
-                              onChanged: (value) {},
+                              value: _ativado3,
+                              onChanged: (value) {
+                                setState(() {
+                                  _ativado3 = value!;
+                                });
+                              },
                             ),
                             CheckboxListTile(
                               activeColor: colorLetters,
@@ -111,8 +147,12 @@ class _CheckScreenState extends State<CheckScreen> {
                                   color: colorLetters,
                                 ),
                               ),
-                              value: true,
-                              onChanged: (value) {},
+                              value: _ativado4,
+                              onChanged: (value) {
+                                setState(() {
+                                  _ativado4 = value!;
+                                });
+                              },
                             ),
                             CheckboxListTile(
                               activeColor: colorLetters,
@@ -122,8 +162,12 @@ class _CheckScreenState extends State<CheckScreen> {
                                   color: colorLetters,
                                 ),
                               ),
-                              value: false,
-                              onChanged: (value) {},
+                              value: _ativado5,
+                              onChanged: (value) {
+                                setState(() {
+                                  _ativado5 = value!;
+                                });
+                              },
                             ),
                           ],
                         ),
@@ -132,6 +176,7 @@ class _CheckScreenState extends State<CheckScreen> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                       child: TextField(
+                        controller: _controller,
                         cursorColor: colorLetters,
                         autocorrect: true,
                         maxLines: 2,
@@ -176,7 +221,9 @@ class _CheckScreenState extends State<CheckScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          save(context);
+        },
         backgroundColor: primaryColor,
         child: Icon(
           Icons.fact_check_outlined,
