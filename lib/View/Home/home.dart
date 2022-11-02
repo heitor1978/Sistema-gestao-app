@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sistemagestao_app/Theme/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sistemagestao_app/View/AlternateRoutes/Alternate_Routes.dart';
+import 'package:sistemagestao_app/View/ListRoutes/list_Routes.dart';
 import 'package:sistemagestao_app/View/CheckScreen/check_screen.dart';
 import 'package:sistemagestao_app/View/Documents/documents.dart';
 import 'package:sistemagestao_app/View/Occurrence/occurrence.dart';
@@ -125,7 +125,7 @@ class _HomeState extends State<Home> {
                         onTap: () {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(
-                                  builder: (_) => AlternateRoutes()),
+                                  builder: (_) => ListRoutes()),
                               (route) => false);
                         },
                         child: Container(
