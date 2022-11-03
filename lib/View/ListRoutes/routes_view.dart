@@ -1,4 +1,4 @@
-import 'dart:ffi';
+
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class RoutesView extends StatefulWidget {
 class _RoutesViewState extends State<RoutesView> {
   var routeService = RouteService();
   PolylinePoints polylinePoints = PolylinePoints();
-  String googleApiKey = 'AIzaSyCxOtHAIzH1OYU2NTSNcr97eoFmaT725FA';
+  String googleApiKey = 'AIzaSyCT6Zx0UuQv0sLgsbNwdg5P5H440Z7PHzc';
   Map<PolylineId, Polyline> polylines = {};
   Map<MarkerId, Marker> markers = {}; 
 
@@ -29,6 +29,7 @@ class _RoutesViewState extends State<RoutesView> {
   @override
   void initState() {
 
+    getPolyLine(widget.localizacaoEntrega!.latitude, widget.localizacaoEntrega!.longitude);
     super.initState();
   }
 
@@ -55,7 +56,7 @@ class _RoutesViewState extends State<RoutesView> {
           ),
           Marker(
               markerId: MarkerId('Destino'),
-              position: widget.localizacaoEntrega!),
+              position: LatLng(widget.localizacaoEntrega!.latitude, widget.localizacaoEntrega!.longitude)),
         },
         polylines: Set<Polyline>.of(polylines.values),
       ),

@@ -48,9 +48,11 @@ class _ListRoutesState extends State<ListRoutes> {
                     children: [
                       InkWell(
                         onTap: () {
+                          GeoPoint geoPoint = snapshot.data!.docs[index]['localizacaoAtual'];
                           Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) =>
-                                RoutesView(localizacaoEntrega: LatLng(snapshot.data!.docs[index]['localizacaoAtual']['latitude'],snapshot.data!.docs[index]['localizacaoAtual']['longitude'])),
+                              //RoutesView(localizacaoEntrega: LatLng(geoPoint.("Latitude"), geoPoint("Longitude"))),
+                              RoutesView(localizacaoEntrega: LatLng(geoPoint.latitude, geoPoint.longitude)),
                           ));
                         },
                         child: Padding(
