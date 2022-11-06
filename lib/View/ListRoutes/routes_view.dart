@@ -1,6 +1,3 @@
-
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sistemagestao_app/Services/RoutesService/routes_service.dart';
@@ -37,6 +34,7 @@ class _RoutesViewState extends State<RoutesView> {
   Widget build(BuildContext context) {
     double latitude = widget.localizacaoEntrega!.latitude;
     return Scaffold(
+      drawer: CustomDrawer(),
       appBar: CustomAppBarHome(
         title: 'Rota da Viagem',
       ),

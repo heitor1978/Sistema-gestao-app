@@ -25,7 +25,10 @@ class _DocumentsState extends State<Documents> {
           ),
           backgroundColor: primaryColor,
           leading: IconButton(
-              onPressed: () {}, icon: Icon(Icons.keyboard_return_rounded)),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.keyboard_return_rounded)),
         ),
         body: PageView(
           onPageChanged: (int page) {

@@ -19,28 +19,34 @@ class _OccurrenceState extends State<Occurrence> {
 
   String? occurrenceName = '', occurrenceRegister = '';
 
-  final TextEditingController _controllerOcurrenceName = TextEditingController();
-  final TextEditingController _controllerOcurrenceRegister = TextEditingController();
+  final TextEditingController _controllerOcurrenceName =
+      TextEditingController();
+  final TextEditingController _controllerOcurrenceRegister =
+      TextEditingController();
 
   void save(BuildContext context) async {
-      firestore
-          .collection('funcionarios')
-          .doc(auth.currentUser!.uid)
-          .collection('ocorrencia')
-          .doc()
-          .set({
-        "nomeOcorrencia": _controllerOcurrenceName.text,
-        "registroOcorrencia": _controllerOcurrenceRegister.text,
-      });
+    firestore
+        .collection('funcionarios')
+        .doc(auth.currentUser!.uid)
+        .collection('ocorrencia')
+        .doc()
+        .set({
+      "nomeOcorrencia": _controllerOcurrenceName.text,
+      "registroOcorrencia": _controllerOcurrenceRegister.text,
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: CustomDrawer(),
         appBar: AppBar(
           backgroundColor: primaryColor,
           title: Text("Ocorrências"),
+          leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.keyboard_return_rounded)),
         ),
         body: Column(
           children: [

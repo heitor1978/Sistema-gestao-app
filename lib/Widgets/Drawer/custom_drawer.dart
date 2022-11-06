@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:sistemagestao_app/Services/AuthService/auth_service.dart';
 import 'package:sistemagestao_app/View/export_all_view.dart';
 import 'package:sistemagestao_app/theme/theme.dart';
@@ -109,40 +108,40 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 ),
                 ListTile(
                   title: const Text(
-                    "Conta",
+                    "Home",
                     style: TextStyle(
                       color: Color.fromARGB(255, 0, 0, 0),
                     ),
                   ),
                   trailing: const Icon(
-                    Icons.person,
+                    Icons.house,
                     color: Color.fromARGB(255, 0, 0, 0),
                   ),
                   onTap: () {
-                    /*Navigator.of(context).push(
+                    Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const UserAccount(),
+                        builder: (context) => const Home(),
                       ),
-                    );*/
+                    );
                   },
                 ),
                 ListTile(
                   title: const Text(
-                    "Rotas",
+                    "Lista de Rotas",
                     style: TextStyle(
                       color: Color.fromARGB(255, 0, 0, 0),
                     ),
                   ),
                   trailing: const Icon(
-                    Icons.assistant_direction,
+                    Icons.map,
                     color: Color.fromARGB(255, 0, 0, 0),
                   ),
                   onTap: () {
-                    /*Navigator.of(context).push(
+                    Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const MyOrders(),
+                        builder: (context) => const ListRoutes(),
                       ),
-                    );*/
+                    );
                   },
                 ),
                 ListTile(
@@ -153,15 +152,53 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     ),
                   ),
                   trailing: const Icon(
-                    Icons.assignment,
+                    Icons.draw,
                     color: Color.fromARGB(255, 0, 0, 0),
                   ),
                   onTap: () {
-                    /*Navigator.of(context).push(
+                    Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const ListAddress(),
+                        builder: (context) => const Occurrence(),
                       ),
-                    );*/
+                    );
+                  },
+                ),
+                ListTile(
+                  title: const Text(
+                    "Documentações",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                  trailing: const Icon(
+                    Icons.document_scanner,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const Documents(),
+                      ),
+                    );
+                  },
+                ),
+                ListTile(
+                  title: const Text(
+                    "Lista de Checklist",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                  trailing: const Icon(
+                    Icons.checklist,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const Occurrence(),
+                      ),
+                    );
                   },
                 ),
               ],
@@ -172,7 +209,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Text(
-                  "Deslogar ",
+                  "Deslogar",
                   style: TextStyle(
                     color: Color.fromARGB(255, 0, 0, 0),
                   ),
