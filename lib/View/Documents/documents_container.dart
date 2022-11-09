@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:dio/dio.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class DocumentsContainer extends StatelessWidget {
   DocumentsContainer({super.key});
@@ -13,13 +14,26 @@ class DocumentsContainer extends StatelessWidget {
   final firestore = FirebaseFirestore.instance;
   final auth = FirebaseAuth.instance;
 
+  /*Future _getStoragePermission() async {
+  if (await Permission.storage.request().isGranted) {
+      permissionGranted = true;
+
+  } else if (await Permission.storage.request().isPermanentlyDenied) {
+    await openAppSettings();
+  } else if (await Permission.storage.request().isDenied) {
+
+    permissionGranted = false;
+
+  }
+  }*/
+
 
   Future getDocumentsDownload(String fileName) async {
+    await Permission.storage.request();
     final storage = FirebaseStorage.instance.ref();
     final url = await storage.child('documentation/$fileName').getDownloadURL();
     final dir = await getApplicationDocumentsDirectory();
-    final filePath = "Download/$fileName";
-    await Dio().download(url , filePath);
+    await Dio().download(url , "/download");
 
   }
 

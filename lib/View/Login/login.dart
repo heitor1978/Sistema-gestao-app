@@ -59,13 +59,45 @@ class _LoginState extends State<Login> {
             child: ListView(
               children: [
                 Container(
-                  padding: const EdgeInsets.fromLTRB(0, 350, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                   decoration: const BoxDecoration(
                     color: primaryColor,
                     borderRadius: BorderRadius.only(
                         // FUNÇÃO DE COLOCAR BORDA NA LOGO DA FOTO
                         bottomLeft: Radius.circular(20),
                         bottomRight: Radius.circular(20)),
+                  ),
+                  child: Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 5,
+                          width: 20,
+                        ),
+                        Container(
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(7),
+                          height: MediaQuery.of(context).size.height / 4,
+                          width: MediaQuery.of(context).size.height / 4,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black26,
+                                blurRadius: 25.0,
+                                spreadRadius: 0.1,
+                              ),
+                            ],
+                          ),
+                          child: Image.asset(
+                            'assets/images/chiquinho-logo.png',
+                            height: 250,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -124,70 +156,6 @@ class _LoginState extends State<Login> {
             ),
           ),
         ),
-        Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 5,
-                width: 20,
-              ),
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(7),
-                height: MediaQuery.of(context).size.height / 4,
-                width: MediaQuery.of(context).size.height / 4,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 25.0,
-                      spreadRadius: 0.1,
-                    ),
-                  ],
-                ),
-                child: Image.asset(
-                  'assets/images/chiquinho-logo.png',
-                  height: 250,
-                ),
-              ),
-            ],
-          ),
-        ),
-        Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 5,
-                width: 20,
-              ),
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(7),
-                height: MediaQuery.of(context).size.height / 4,
-                width: MediaQuery.of(context).size.height / 4,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(150),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 25.0,
-                      spreadRadius: 0.1,
-                    ),
-                  ],
-                ),
-                child: Image.asset(
-                  'assets/images/chiquinho-logo.png',
-                  height: 250,
-                ),
-              ),
-            ],
-          ),
-        )
       ]),
     );
   }
