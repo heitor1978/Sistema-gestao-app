@@ -24,8 +24,16 @@ class _CheckScreenState extends State<CheckScreen> {
   bool _ativado5 = false;
 
   void save(BuildContext context) async {
+    final now = DateTime.now();
+    var day = now.day;
+    var month = now.month;
+    var year = now.year;
+    var hour = now.hour;
+    var minute = now.minute;
+    var second = now.second;
+
     firestore.collection('funcionarios').doc(auth.currentUser!.uid).collection('checklist').doc().set({
-      "nome": "Checklist do Dia",
+      "nome": "Checklist - Dia $day/$month/$year - $hour:$minute:$second",
       "observacaoChecklist": _controller.text,
     });
   }
