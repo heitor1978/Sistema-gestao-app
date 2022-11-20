@@ -163,7 +163,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     );
                   },
                 ),
-                ListTile(
+                /*ListTile(
                   title: const Text(
                     "Documentações",
                     style: TextStyle(
@@ -181,7 +181,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       ),
                     );
                   },
-                ),
+                ),*/
                 ListTile(
                   title: const Text(
                     "Lista de Checklist",

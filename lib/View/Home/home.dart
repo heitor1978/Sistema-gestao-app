@@ -158,16 +158,6 @@ class _HomeState extends State<Home> {
                                         )
                                       ],
                                     ),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          "3 Rotas Previstas",
-                                          style: GoogleFonts.poppins(
-                                            fontSize: 14,
-                                          ),
-                                        )
-                                      ],
-                                    ),
                                   ],
                                 ),
                               ],
@@ -176,7 +166,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                    Row(
+                    /*Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         InkWell(
@@ -265,6 +255,53 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ],
+                    ),*/
+                    Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(15),
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => CheckScreen(),
+                          ));
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: colorCard,
+                              borderRadius: BorderRadius.circular(15)),
+                          width: MediaQuery.of(context).size.width,
+                          height: 100,
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  "assets/images/check-box.png",
+                                  height: 50,
+                                  width: 50,
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "Checklist",
+                                          style: GoogleFonts.poppins(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(15),
