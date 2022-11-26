@@ -91,10 +91,10 @@ class _LoginState extends State<Login> {
                               ),
                             ],
                           ),
-                          child: Image.asset(
+                          /*child: Image.asset(
                             'assets/images/chiquinho-logo.png',
                             height: 250,
-                          ),
+                          ),*/
                         ),
                       ],
                     ),
