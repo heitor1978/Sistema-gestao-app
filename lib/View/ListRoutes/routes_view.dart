@@ -49,10 +49,6 @@ class _RoutesViewState extends State<RoutesView> {
         myLocationEnabled: true,
         markers: {
           Marker(
-            markerId: MarkerId('Atual'),
-            position: LatLng(latitudeAtual,longitudeAtual),
-          ),
-          Marker(
               markerId: MarkerId('Destino'),
               position: LatLng(widget.localizacaoEntrega!.latitude, widget.localizacaoEntrega!.longitude)),
         },
