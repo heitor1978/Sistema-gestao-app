@@ -25,6 +25,14 @@ class _OccurrenceState extends State<Occurrence> {
       TextEditingController();
 
   void save(BuildContext context) async {
+    final now = DateTime.now();
+    var day = now.day;
+    var month = now.month;
+    var year = now.year;
+    var hour = now.hour;
+    var minute = now.minute;
+    var second = now.second;
+
     firestore
         .collection('funcionarios')
         .doc(auth.currentUser!.uid)
@@ -33,6 +41,7 @@ class _OccurrenceState extends State<Occurrence> {
         .set({
       "nomeOcorrencia": _controllerOcurrenceName.text,
       "registroOcorrencia": _controllerOcurrenceRegister.text,
+      "datahora": "$day/$month/$year - $hour:$minute:$second",
     });
   }
 
@@ -50,13 +59,16 @@ class _OccurrenceState extends State<Occurrence> {
         ),
         body: Column(
           children: [
-            CustomTextField(
-              labelText: "Nome da Ocorrência",
-              placeholder: "Ocorrência - Dia/Mês - Hora(14:30)",
-              obscureText: false,
-              onSaved: (value) => occurrenceName = value,
-              validator: (value) => UserValidator.validarNome(value!),
-              controller: _controllerOcurrenceName,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: CustomTextField(
+                labelText: "Nome da Ocorrência",
+                placeholder: "Nome da Ocorrência",
+                obscureText: false,
+                onSaved: (value) => occurrenceName = value,
+                validator: (value) => UserValidator.validarNome(value!),
+                controller: _controllerOcurrenceName,
+              ),
             ),
             CustomTextField(
               labelText: "Registro da Ocorrência",
@@ -69,7 +81,10 @@ class _OccurrenceState extends State<Occurrence> {
             ),
             CustomTextButton(
               buttonText: "Registrar",
-              onPressed: () => save(context),
+              onPressed: () {
+                save(context);
+                Navigator.of(context).pop();
+              },
             ),
           ],
         ));
